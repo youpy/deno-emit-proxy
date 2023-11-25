@@ -5,7 +5,7 @@ import { load } from "https://deno.land/x/eszip@v0.55.4/loader.ts";
 const app = new Application();
 const router = new Router();
 
-router.get("/x/:mod(.*)", async (ctx) => {
+router.get(`/x/:mod(.*@.*)`, async (ctx) => {
   const mod = ctx.params.mod;
   const url = new URL("https://deno.land/x/" + mod);
   const { code } = await bundle(url, { load });
