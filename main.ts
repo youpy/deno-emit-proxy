@@ -15,10 +15,6 @@ router.get(`/x/:mod(.*@.*)`, async (ctx) => {
     "application/javascript; charset=utf-8"
   );
   ctx.response.headers.append("Access-Control-Allow-Origin", "*");
-  ctx.response.headers.append(
-    "Cache-Control",
-    "public, max-age=604800, immutable"
-  );
   ctx.response.body = code;
 });
 
