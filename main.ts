@@ -18,6 +18,10 @@ router.get(`/x/:mod(.*@.*)`, async (ctx) => {
   ctx.response.body = code
 })
 
+router.get(`/`, (ctx) => {
+  ctx.response.redirect('https://github.com/youpy/deno-emit-proxy')
+})
+
 app.use(router.routes())
 
 await app.listen({ port: 8000 })
